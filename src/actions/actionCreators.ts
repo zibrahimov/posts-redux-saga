@@ -1,25 +1,49 @@
 import {
-  POST_REQUEST,
-  POST_SUCCESS,
-  POST_ERROR,
+  FETCH_POST_REQUEST,
+  FETCH_POST_SUCCESS,
+  FETCH_POST_ERROR,
+  CREATE_POST_REQUEST,
+  CREATE_POST_SUCCESS,
+  CREATE_POST_ERROR,
 } from './actionTypes';
 
-export function postRequest() {
+export function fetchPostRequest() {
   return {
-    type: POST_REQUEST,
+    type: FETCH_POST_REQUEST,
   };
 }
 
-export function postSuccess(payload: any) {
+export function fetchPostSuccess(payload: any) {
   return {
-    type: POST_SUCCESS,
+    type: FETCH_POST_SUCCESS,
     payload,
   };
 }
 
-export function postError(error: any) {
+export function fetchPostError(error: any) {
   return {
-    type: POST_ERROR,
+    type: FETCH_POST_ERROR,
+    error,
+  };
+}
+
+export function createPostRequest(payload: any) {
+  return {
+    type: CREATE_POST_REQUEST,
+    payload,
+  };
+}
+
+export function createPostSuccess(payload: any) {
+  return {
+    type: CREATE_POST_SUCCESS,
+    payload,
+  };
+}
+
+export function createPostError(error: any) {
+  return {
+    type: CREATE_POST_ERROR,
     error,
   };
 }

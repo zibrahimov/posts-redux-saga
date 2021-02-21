@@ -1,11 +1,11 @@
 import { expectSaga } from 'redux-saga-test-plan';
 import { call } from 'redux-saga-test-plan/matchers';
 import { throwError } from 'redux-saga-test-plan/providers';
-import { postSuccess, postError } from '../actions/actionCreators';
+import { fetchPostSuccess, fetchPostError, createPostSuccess } from '../actions/actionCreators';
 import { _testable } from '../sagas/postSaga';
-import { fakeFetchResponse } from './mock/posts';
+import { fakeFetchResponse, fakeInput, fakePostResponse } from './mock/posts';
 
-const { fetchPosts, fetchPostsApi } = _testable;
+const { fetchPosts, fetchPostsApi, createPostApi, createPost } = _testable;
 
 describe('fetchPosts', () => {
   it('fetches posts and dispatches success', () =>
@@ -13,7 +13,7 @@ describe('fetchPosts', () => {
       .provide([
         [call.fn(fetchPostsApi), fakeFetchResponse],
       ])
-      .put(postSuccess(fakeFetchResponse.data))
+      .put(fetchPostSuccess(fakeFetchResponse.data))
       .run());
 
   it('handles errors', () => {
@@ -23,7 +23,18 @@ describe('fetchPosts', () => {
         [call.fn(fetchPostsApi), throwError(error)],
       ])
       .call.fn(fetchPostsApi)
-      .put(postError(error))
+      .put(fetchPostError(error))
       .run();
   });
+});
+
+describe('createPost', () => {
+  it('creates post and dispatches success', () =>
+    expectSaga(createPost, fakeInput)
+      .provide([
+        [call.fn(createPostApi), fakePostResponse],
+      ])
+      .put(createPostSuccess(fakePostResponse))
+      // .call(cogoToast.success, 'Success'))
+      .run());
 });

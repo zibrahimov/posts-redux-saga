@@ -402,3 +402,18 @@ const fakeResponseData = [ { userId: 1,
 export const fakeFetchResponse = {
   data: fakeResponseData,
 }
+
+export const fakeInput = {
+  title: 'title',
+  body: 'body',
+  userId: 1,
+}
+
+export const fakePostResponse = {
+  data: {
+    body: "bvk",
+    id: 101,
+    title: "fevle",
+    userId: 1,
+  },
+}
