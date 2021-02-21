@@ -3,6 +3,7 @@ import axios from 'axios';
 import { call, put, takeLatest } from 'redux-saga/effects';
 import { fetchPostSuccess, fetchPostError, createPostSuccess, createPostError } from '../actions/actionCreators';
 import { CREATE_POST_REQUEST, FETCH_POST_REQUEST } from '../actions/actionTypes';
+import cogoToast from 'cogo-toast';
 
 const BASE_URL = 'https://jsonplaceholder.typicode.com/posts';
 
@@ -27,8 +28,8 @@ function* fetchPosts() {
 function* createPost({ payload }: any) {
   try {
     const response = yield call(createPostApi, payload);
-    console.log(response);
     yield put(createPostSuccess(response.data));
+    yield call(cogoToast.success, 'Success');
   } catch (error) {
     yield put(createPostError(error));
   }

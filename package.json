@@ -10,6 +10,7 @@
     "@types/node": "^14.14.22",
     "@types/react-dom": "^17.0.0",
     "axios": "^0.21.1",
+    "cogo-toast": "^4.2.3",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-hook-form": "^6.15.1",

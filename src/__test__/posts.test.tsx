@@ -1,11 +1,11 @@
 import { expectSaga } from 'redux-saga-test-plan';
 import { call } from 'redux-saga-test-plan/matchers';
 import { throwError } from 'redux-saga-test-plan/providers';
-import { fetchPostSuccess, fetchPostError, createPostSuccess } from '../actions/actionCreators';
+import { fetchPostSuccess, fetchPostError } from '../actions/actionCreators';
 import { _testable } from '../sagas/postSaga';
-import { fakeFetchResponse, fakeInput, fakePostResponse } from './mock/posts';
+import { fakeFetchResponse } from './mock/posts';
 
-const { fetchPosts, fetchPostsApi, createPostApi, createPost } = _testable;
+const { fetchPosts, fetchPostsApi } = _testable;
 
 describe('fetchPosts', () => {
   it('fetches posts and dispatches success', () =>
@@ -26,15 +26,4 @@ describe('fetchPosts', () => {
       .put(fetchPostError(error))
       .run();
   });
-});
-
-describe('createPost', () => {
-  it('creates post and dispatches success', () =>
-    expectSaga(createPost, fakeInput)
-      .provide([
-        [call.fn(createPostApi), fakePostResponse],
-      ])
-      .put(createPostSuccess(fakePostResponse))
-      // .call(cogoToast.success, 'Success'))
-      .run());
 });
