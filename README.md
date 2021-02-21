@@ -1,3 +1,5 @@
+<img src="https://raw.githubusercontent.com/zibrahimov/posts-redux-saga/main/screenshots/screenshot.png" />
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
