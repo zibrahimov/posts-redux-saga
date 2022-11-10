@@ -1,6 +1,9 @@
-import React from 'react';
+interface Props {
+  title: string;
+  body: string;
+}
 
-const PostItem = ({ title, body }: Props) => (
+export const PostItem = ({ title, body }: Props) => (
   <div className="list-group mt-4">
     <div className="list-group-item list-group-item-action">
       <div className="d-flex w-100 justify-content-between">
@@ -10,8 +13,3 @@ const PostItem = ({ title, body }: Props) => (
     </div>
   </div>
 );
-interface Props {
-  title: string;
-  body: string;
-}
-export default PostItem;

@@ -1,6 +1,6 @@
 import { render, screen, fireEvent, act } from '@testing-library/react';
 import { Provider } from "react-redux";
-import CreatePost from '../components/CreatePost';
+import { CreatePost } from '../components/CreatePost';
 import store from '../store/store';
 
 describe("<CreatePost />", () => {

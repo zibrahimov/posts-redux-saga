@@ -1,9 +1,8 @@
-import React from 'react';
 import { useDispatch } from 'react-redux';
 import { useForm } from 'react-hook-form';
 import { createPostRequest } from '../actions/actionCreators';
 
-const CreatePost = () => {
+export const CreatePost = () => {
   const dispatch = useDispatch();
   const { register, handleSubmit } = useForm();
 
@@ -25,4 +24,3 @@ const CreatePost = () => {
     </form>
   );
 };
-export default CreatePost;

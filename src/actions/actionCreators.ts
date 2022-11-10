@@ -13,35 +13,35 @@ export function fetchPostRequest() {
   };
 }
 
-export function fetchPostSuccess(payload: any) {
+export function fetchPostSuccess(payload) {
   return {
     type: FETCH_POST_SUCCESS,
     payload,
   };
 }
 
-export function fetchPostError(error: any) {
+export function fetchPostError(error) {
   return {
     type: FETCH_POST_ERROR,
     error,
   };
 }
 
-export function createPostRequest(payload: any) {
+export function createPostRequest(payload) {
   return {
     type: CREATE_POST_REQUEST,
     payload,
   };
 }
 
-export function createPostSuccess(payload: any) {
+export function createPostSuccess(payload) {
   return {
     type: CREATE_POST_SUCCESS,
     payload,
   };
 }
 
-export function createPostError(error: any) {
+export function createPostError(error) {
   return {
     type: CREATE_POST_ERROR,
     error,

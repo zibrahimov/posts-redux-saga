@@ -1,4 +1,7 @@
-import React from 'react';
+interface Props {
+  children: JSX.Element;
+  isLoading: boolean,
+};
 
 const LoadingPlaceholder = ({ isLoading, children }: Props) => (isLoading ? (
   <div className="margin-auto">
@@ -8,8 +11,5 @@ const LoadingPlaceholder = ({ isLoading, children }: Props) => (isLoading ? (
 ) : (
   children
 ));
-interface Props {
-  children: any;
-  isLoading: boolean,
-};
+
 export default LoadingPlaceholder;
